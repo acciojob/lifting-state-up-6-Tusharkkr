@@ -6,19 +6,17 @@ import TodoList from "./Todolist";
 
 const App = () => {
 
-  let arr = [
-    {name : 'Learn React' ,status : false},
-    {name : 'Build a React app' ,status : false},
-    {name : 'Deploy the React App' ,status : false}
-  ]
-
-
+  const todos = [
+  { id: 1, text: "Learn React", completed: false },
+  { id: 2, text: "Build a React app", completed: false },
+  { id: 3, text: "Deploy the React App", completed: false }
+];
 
   return (
     <div>
       <h1>Parent Component</h1>
       <TodoList 
-      arr={arr}
+      todos={todos}
       />
     </div>
   )

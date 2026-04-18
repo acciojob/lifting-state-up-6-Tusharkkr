@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-let TodoList = ({arr}) => {
+let TodoList = ({todos}) => {
 
-    function handleComplete(e){
-        e.status = true
-        console.log(e.status)
-        e.target.remove()
-        
+    let [render, setRender] = useState(false)
+
+    function handleComplete(value){
+        value.completed = true
+        setRender(!render)
     }
 
     return (
         <div>
             <h2>Child Component</h2>
             <ul>
-                {arr.map((value,index) =>{
-                    {console.log(value.status,index)}
-                    return (<li>{value.name} <button onClick={(e)=>handleComplete(e)}>Complete</button></li>)
+                {todos.map((value) =>{
+                    {console.log(value.completed)}
+                    return (<li>{value.text} {!value.completed && <button onClick={()=>handleComplete(value)}>Complete</button>}</li>)
 })}
             </ul>
         </div>
