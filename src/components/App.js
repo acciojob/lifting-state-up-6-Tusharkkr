@@ -6,18 +6,19 @@ import TodoList from "./Todolist";
 
 const App = () => {
 
-  let arr = ['Learn React', 'Build a React app', 'Deploy the React App']
+  let arr = [
+    {name : 'Learn React' ,status : false},
+    {name : 'Build a React app' ,status : false},
+    {name : 'Deploy the React App' ,status : false}
+  ]
 
-  function handleComplete(){
-        
-  }
+
 
   return (
     <div>
       <h1>Parent Component</h1>
       <TodoList 
       arr={arr}
-      handleComplete={handleComplete}
       />
     </div>
   )
